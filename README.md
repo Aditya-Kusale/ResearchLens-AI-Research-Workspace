@@ -1,25 +1,39 @@
 # ResearchLens AI
 
-An AI research-intelligence workspace for organizing papers, exploring cross-paper questions, and surfacing research gaps.
+ResearchLens turns a collection of research PDFs into a private, searchable workspace. Upload papers, retrieve supporting passages across the collection, and inspect page-level sources in the built-in reader.
 
 ## Live dashboard
 
 [Open ResearchLens AI](https://aditya-kusale.github.io/researchlens-ai/)
 
-## MVP experience
+## What works
 
-- Add research PDFs to a collection.
-- Browse indexed source papers and extraction status.
-- Ask cross-paper research questions with cited answer placeholders.
-- Review synthesized themes, contradictions, and open research gaps.
+- Import multiple text-based PDFs by file picker or drag and drop.
+- Extract text page by page in the browser with PDF.js.
+- Keep extracted text and the original PDFs in browser IndexedDB so the collection survives a refresh on that device.
+- Split pages into overlapping passages and rank them for questions with a local TF-IDF retrieval index.
+- Open a source citation in the PDF reader at its cited page.
+- Create extractive paper summaries from sentences in the source.
+- Compare shared vocabulary, paper-specific emphasis, and possible coverage gaps across papers.
+- Remove papers and their local data from the collection.
 
 ## Run locally
 
-Open `index.html` in a browser. This starter is dependency-free so the product design can be reviewed immediately.
+Serve this directory over HTTP, then open it in a modern browser. PDF.js is loaded as a pinned ES module from jsDelivr, so an internet connection is needed on first load. For example:
 
-## Next build steps
+```sh
+python -m http.server 8000
+```
 
-1. Add a PDF extraction API and durable document storage.
-2. Generate embeddings and connect a vector database.
-3. Replace the demo answer engine with a retrieval-augmented generation pipeline with page-level citations.
-4. Add authentication, collections, and saved insight reports.
+Then visit `http://localhost:8000`.
+
+## Privacy and current limits
+
+PDF contents and the search index stay in the browser's IndexedDB; they are not uploaded to a server. This static MVP does not use a language model or external vector database. Search uses TF-IDF lexical ranking, summaries select source sentences, and collection comparisons are vocabulary-based signals. Treat retrieved passages as evidence to review, and verify potential gaps against the papers themselves. Scanned PDFs without selectable text need OCR, which is not included.
+
+## Next steps toward the full platform
+
+1. Add an opt-in embedding model and semantic vector search.
+2. Add a secured API for grounded answer synthesis and citation verification.
+3. Add OCR for scanned papers and richer citation/reference extraction.
+4. Add accounts and encrypted synchronization for collections across devices.
