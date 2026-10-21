@@ -4,7 +4,7 @@ ResearchLens turns a collection of research PDFs into a private, searchable work
 
 ## Live dashboard
 
-[Open ResearchLens AI](https://aditya-kusale.github.io/researchlens-ai/)
+[Open ResearchLens AI](https://aditya-kusale.github.io/researchlens-ai-research-workspace/)
 
 ## What works
 
