@@ -4,7 +4,7 @@ ResearchLens AI is a private, browser-based research workspace for exploring pap
 
 ## Live dashboard
 
-[Open ResearchLens AI](https://aditya-kusale.github.io/researchlens-ai-research-workspace/)
+[Open ResearchLens AI](https://aditya-kusale.github.io/ResearchLens-AI-Research-Workspace/)
 
 ## What works
 
