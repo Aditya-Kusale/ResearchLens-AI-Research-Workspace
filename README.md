@@ -1,6 +1,6 @@
 # ResearchLens AI
 
-ResearchLens turns a collection of research PDFs into a private, searchable workspace. Upload papers, retrieve supporting passages across the collection, and inspect page-level sources in the built-in reader.
+ResearchLens AI is a private, browser-based research workspace for exploring papers. Import PDFs, find relevant passages with page-level citations, create extractive summaries, and compare themes across your collection—all stored locally in your browser.
 
 ## Live dashboard
 
@@ -37,3 +37,7 @@ PDF contents and the search index stay in the browser's IndexedDB; they are not 
 2. Add a secured API for grounded answer synthesis and citation verification.
 3. Add OCR for scanned papers and richer citation/reference extraction.
 4. Add accounts and encrypted synchronization for collections across devices.
+
+## License
+
+ResearchLens AI is available under the [MIT License](LICENSE).
