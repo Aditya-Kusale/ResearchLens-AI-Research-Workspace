@@ -2,6 +2,10 @@
 
 An AI research-intelligence workspace for organizing papers, exploring cross-paper questions, and surfacing research gaps.
 
+## Live dashboard
+
+[Open ResearchLens AI](https://aditya-kusale.github.io/researchlens-ai/)
+
 ## MVP experience
 
 - Add research PDFs to a collection.
