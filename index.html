@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ResearchLens AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a class="brand" href="#"><span class="brand-mark">⌁</span> ResearchLens</a>
+      <nav aria-label="Primary navigation">
+        <a class="nav-item active" href="#workspace"><span>◈</span> Workspace</a>
+        <a class="nav-item" href="#library"><span>▤</span> Paper library <b id="paperCount">3</b></a>
+        <a class="nav-item" href="#insights"><span>✦</span> Research insights</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="usage"><div><span>Monthly analysis</span><strong>12 / 25</strong></div><div class="meter"><i></i></div></div>
+        <button class="profile"><span class="avatar">AK</span><span>Aditya Kusale<small>Free workspace</small></span><b>⋯</b></button>
+      </div>
+    </aside>
+    <main>
+      <header><div><p class="eyebrow">RESEARCH WORKSPACE</p><h1>Good morning, Aditya.</h1><p class="subhead">Turn a stack of papers into your next breakthrough.</p></div><button class="outline-btn" id="newCollection">+ New collection</button></header>
+      <section class="hero" id="workspace"><div><p class="eyebrow">ACTIVE COLLECTION</p><h2>Multimodal learning systems</h2><p>3 papers · Updated just now</p></div><button class="spark-btn" id="analyzeBtn">✦ Analyze collection</button></section>
+      <section class="stats" aria-label="Collection statistics"><article><span>03</span><p>Papers indexed</p></article><article><span>14</span><p>Citations linked</p></article><article><span>06</span><p>Concept clusters</p></article><article><span>02</span><p>Research gaps</p></article></section>
+      <section class="grid">
+        <div class="panel papers" id="library"><div class="panel-head"><div><p class="eyebrow">YOUR PAPERS</p><h2>Source material</h2></div><button class="text-btn" id="uploadTrigger">+ Add papers</button><input id="fileInput" type="file" accept="application/pdf" multiple hidden /></div>
+          <div class="paper-list" id="paperList">
+            <button class="paper selected"><span class="file-type">PDF</span><span><strong>Learning transferable visual models</strong><small>Radford et al. · 2021</small></span><em>98%</em></button>
+            <button class="paper"><span class="file-type">PDF</span><span><strong>Flamingo: a visual language model</strong><small>Alayrac et al. · 2022</small></span><em>96%</em></button>
+            <button class="paper"><span class="file-type">PDF</span><span><strong>PaLI: scaling language-image learning</strong><small>Chen et al. · 2023</small></span><em>94%</em></button>
+          </div>
+        </div>
+        <div class="panel ask"><div class="panel-head"><div><p class="eyebrow">ASK RESEARCHLENS</p><h2>Explore across papers</h2></div><span class="status"><i></i> Sources ready</span></div>
+          <div class="answer" id="answer"><p class="answer-label">TRY A QUESTION</p><h3>How do these papers approach cross-modal alignment?</h3><p>Ask a question to uncover a cited answer across your selected research.</p></div>
+          <form id="askForm"><input id="question" autocomplete="off" placeholder="Ask about your papers..." /><button aria-label="Ask question">↑</button></form>
+        </div>
+      </section>
+      <section class="insights" id="insights"><div class="panel-head"><div><p class="eyebrow">SYNTHESIZED INSIGHTS</p><h2>Where your collection leads</h2></div><button class="text-btn" id="refreshInsights">↻ Refresh</button></div><div class="insight-grid"><article><span class="insight-icon">↗</span><p class="eyebrow">EMERGING THEME</p><h3>Data quality is becoming the differentiator.</h3><p>All three papers shift emphasis from model scale toward curation and diverse supervision.</p></article><article><span class="insight-icon amber">⌁</span><p class="eyebrow">RESEARCH GAP</p><h3>Long-horizon multimodal reasoning</h3><p>None evaluate how alignment holds over multi-step, real-world tasks.</p></article><article><span class="insight-icon violet">◌</span><p class="eyebrow">CONTRADICTION</p><h3>Scale vs. task specificity</h3><p>Two papers favor broad pretraining; one finds targeted data is more sample-efficient.</p></article></div></section>
+    </main><div class="toast" id="toast" role="status"></div><script src="app.js"></script>
+  </body>
+</html>

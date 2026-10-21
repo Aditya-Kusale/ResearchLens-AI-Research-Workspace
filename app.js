@@ -1,0 +1,10 @@
+const list = document.querySelector('#paperList');
+const toast = document.querySelector('#toast');
+const showToast = message => { toast.textContent = message; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 2600); };
+list.addEventListener('click', event => { const paper = event.target.closest('.paper'); if (!paper) return; document.querySelectorAll('.paper').forEach(item => item.classList.remove('selected')); paper.classList.add('selected'); });
+document.querySelector('#uploadTrigger').onclick = () => document.querySelector('#fileInput').click();
+document.querySelector('#fileInput').addEventListener('change', event => { [...event.target.files].forEach(file => { const item = document.createElement('button'); item.className = 'paper'; item.innerHTML = `<span class="file-type">PDF</span><span><strong>${file.name.replace(/\.pdf$/i, '')}</strong><small>Added just now · waiting to index</small></span><em>new</em>`; list.append(item); }); document.querySelector('#paperCount').textContent = list.children.length; if(event.target.files.length) showToast(`${event.target.files.length} paper${event.target.files.length > 1 ? 's' : ''} added to your collection`); });
+document.querySelector('#askForm').addEventListener('submit', event => { event.preventDefault(); const q = document.querySelector('#question'); if (!q.value.trim()) return; document.querySelector('#answer').innerHTML = `<p class="answer-label">SYNTHESIZED ANSWER · 3 SOURCES</p><h3>Cross-modal alignment is learned through contrastive objectives, then strengthened with interleaved multimodal supervision.</h3><p>CLIP establishes broad image–text alignment; Flamingo and PaLI extend it with generative, few-shot capabilities. <b>Sources: pp. 3, 5, 8.</b></p>`; q.value = ''; });
+document.querySelector('#analyzeBtn').onclick = () => showToast('Analysis queued — insights will refresh shortly.');
+document.querySelector('#refreshInsights').onclick = () => showToast('Insights refreshed from 3 indexed papers.');
+document.querySelector('#newCollection').onclick = () => showToast('New collection workspace created.');
